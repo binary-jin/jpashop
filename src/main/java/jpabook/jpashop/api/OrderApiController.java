@@ -24,9 +24,7 @@ public class OrderApiController {
             order.getDelivery().getAddress();
             List<OrderItem> orderItems = order.getOrderItems();
 
-            for (OrderItem orderItem : orderItems) {
-                orderItem.getItem().getName();
-            }
+            orderItems.stream().forEach(o -> o.getItem().getName());
         }
         return all;
     }
